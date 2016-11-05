@@ -2,7 +2,18 @@
 
 This project is being developed during the smart city kirkland hackathon.
 
-Things to cover:
+## Interacting with the API
+
+    <script type='text/javascript' src='http://code.jquery.com/jquery-latest.js'></script>
+    <script type='text/javascript'>
+      var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/helloworld";
+      $.get( _url, function( data ) {
+          alert( data.message );
+      });
+  </script>
+
+# TODO:
+
 * System dependencies
 
 * Configuration

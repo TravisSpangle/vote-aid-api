@@ -1,12 +1,18 @@
-# README
+# Vote Aid API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is being developed during the smart city kirkland hackathon.
 
-Things you may want to cover:
+Things to cover:
+* System dependencies
 
-TODO: 
+* Configuration
 
-# setup capistrano
+* Database creation
 
-# setup rspec
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions

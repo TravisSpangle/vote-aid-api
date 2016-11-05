@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, 'voteaid'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:TravisSpangle/vote-aid-api.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

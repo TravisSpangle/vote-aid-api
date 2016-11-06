@@ -1,5 +1,5 @@
 ["Should a photo ID be required to vote?",
- "Should the government raise the federal minimum wage?"
+ "Should the government raise the federal minimum wage?",
  "Should we expand the military?"].each do |q|
   Question.create(question: q)
 end

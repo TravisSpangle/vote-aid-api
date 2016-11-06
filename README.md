@@ -55,11 +55,12 @@ Submit answers with the users token, question_id, and answer
     var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/candidates"
 
     $.ajax({
-      url: _url,
-      type: 'GET',
-      headers: {"Auth-Token": _token }
-      }).done(function(done) { 
-        console.log(done);
+    url: _url+"/candidates",
+    headers: {"Auth-Token": _token }
+    }).done(function(data) {
+      console.log("candidates: ", data.candidates);
+    }).fail(function(data){ 
+      console.log('error');
     });
 
 # TODO:

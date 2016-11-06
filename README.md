@@ -14,7 +14,7 @@ This project is being developed during the smart city kirkland hackathon.
       });
     </script>
 
-### Logging in
+### Logging In
 
 To interact with the api you will need to acquire a token.
 
@@ -27,6 +27,12 @@ To interact with the api you will need to acquire a token.
       console.log( "error: " , error );
     });
 
+### Retrieving Questions
+
+To get the current list of questions.
+
+    _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/questions";
+    $.get(_url, function(questions){ console.log(questions);});
 
 # TODO:
 

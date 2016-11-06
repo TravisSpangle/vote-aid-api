@@ -21,7 +21,6 @@ gem 'puma', '~> 3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
    gem 'byebug', platform: :mri
-   gem 'web-console', '~> 2.0'
 
    %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
      gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
@@ -38,6 +37,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'better_errors'
+  gem 'web-console', '~> 2.0'
   gem 'capistrano-passenger'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rbenv', '~> 2.0'

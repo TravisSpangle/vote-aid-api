@@ -1,0 +1,125 @@
+<ion-view view-title="Items">
+    <div ng-if="!vm.isCreating && !vm.isEditing">
+        <ion-content class="padding has-header">
+
+            <!-- LIST -->
+            <div class="bar bar-header" style="font-size:22px;">
+                <span >  Answer a few questions to begin!</span>
+
+            </div>
+            <div class="bar bar-subheader text-center " style="font-size:18px;">
+              <div class="list card">
+                  <span>Which political party do you associate with?</span>
+              </div>
+              <div class="list card text-center">
+                <button ion-button color="danger">Republican</button>
+                <button ion-button color="secondary">Libertarian</button>
+                <button ion-button color="secondary">Green Party</button>
+                <button ion-button color="secondary">Democrat</button>
+                <button ion-button color="secondary">Constitution</button>
+                <button ion-button color="secondary">Independant</button>
+                <button ion-button color="secondary">Tea Party</button>
+
+              </div>
+              <div class="list card text-center" style="font-size:18px;">
+                  <span>How strong is your party affiliation?</span>
+                </div>
+                <div class="list card text-center">
+                  <button ion-button color="danger">1</button>
+                  <button ion-button color="secondary">2</button>
+                  <button ion-button color="secondary">3</button>
+                  <button ion-button color="secondary">4</button>
+                  <button ion-button color="secondary">5</button>
+
+                </div>
+              <div class="list card text-center" style="font-size:18px;">
+                  <span>Should Government raise federal minimum wage?</span>
+                </div>
+                <div class="list card text-center">
+                  <button ion-button color="danger">NO</button>
+                  <button ion-button color="secondary">YES</button>
+
+                </div>
+              <div class="list card text-center" style="font-size:18px;">
+                  <span>Should phot ID be required to vote?</span>
+                </div>
+                <div class="list card text-center">
+                  <button ion-button color="danger">NO</button>
+                  <button ion-button color="secondary">YES</button>
+
+                </div>
+                <div class="list card" ng-repeat="object in vm.data"
+                     ng-class="{'active':vm.isCurrent(object.id)}">
+                    <div class="item item-icon-right item-icon-left">
+                        <i class="ion-compose icon" ng-click="vm.setEdited(object)"></i>
+
+                        <h2 class="text-center">{{object.name}}</h2>
+                        <i class="icon ion-close-round" ng-click="vm.delete(object.id)"></i>
+                    </div>
+                    <div class="item item-body">
+                        {{object.description}}
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </div>
+    <div ng-if="vm.isCreating">
+        <ion-content class="padding has-header">
+            <!-- CREATING -->
+            <div class="bar bar-header">
+                <h2 class="title">Create Item</h2>
+                <span ng-click="vm.cancelCreate()" class="cancel-create">Cancel</span>
+            </div>
+            <div class="bar bar-subheader">
+                <form class="create-form" role="form"
+                      ng-submit="vm.create(vm.newObject)" novalidate>
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Name</span>
+                            <input type="text" class="form-control"
+                                   ng-model="vm.newObject.name"
+                                   placeholder="Enter name">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Description</span>
+                        <textarea placeholder="Comments" class="form-control"
+                                  ng-model="vm.newObject.description"
+                                  placeholder="Enter description"></textarea>
+                        </label>
+                    </div>
+                    <button class="button button-block button-positive" type="submit">Create</button>
+                </form>
+            </div>
+        </ion-content>
+    </div>
+    <div ng-if="vm.isEditing && !vm.isCreating">
+        <ion-content class="padding has-header">
+            <!-- EDITING -->
+            <div class="bar bar-header bar-secondary">
+                <h1 class="title">Editing {{vm.edited.name}}</h1>
+                <span ng-click="vm.cancelEditing()" class="cancel-create">Cancel</span>
+            </div>
+            <div class="bar bar-subheader">
+                <form class="edit-form" role="form"
+                      ng-submit="vm.update(vm.edited)" novalidate>
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Name</span>
+                            <input type="text" class="form-control"
+                                   ng-model="vm.edited.name"
+                                   placeholder="Enter name">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Description</span>
+                    <textarea class="form-control"
+                              ng-model="vm.edited.description"
+                              placeholder="Enter description"></textarea>
+
+                        </label>
+                    </div>
+                    <button class="button button-block button-positive" type="submit">Save</button>
+                </form>
+            </div>
+        </ion-content>
+    </div>
+</ion-view>

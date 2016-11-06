@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'questions', to: 'questions#index'
+
   post 'users/create'
 
   get 'helloworld', to: 'helloworld#show'

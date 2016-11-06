@@ -69,6 +69,12 @@ Submit answers with the users token, question_id, and answer
       console.log('error');
     });
 
+### Testing
+
+The API is using RSpec. You can build and run tests with
+
+    bundle exec rspec .
+
 ## Mobile Development
 
 ballotBuddy is developed in [iconic](http://ionic.io/).

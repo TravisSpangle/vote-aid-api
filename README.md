@@ -4,11 +4,13 @@ This project is being developed during the smart city kirkland hackathon.
 
 ## Interacting with the API
 
+When teseting keep in mind that some browsers will not allow any cross domain requests to happen. This was tested in FireFox.
+
 ### Confirming a Connection
 
     <script type='text/javascript' src='http://code.jquery.com/jquery-latest.js'></script>
     <script type='text/javascript'>
-      var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/helloworld";
+      var _url = "http://api.ballot-buddy.com/helloworld";
       $.get( _url, function( data ) {
           alert( data.message );
       });
@@ -18,7 +20,7 @@ This project is being developed during the smart city kirkland hackathon.
 
 To interact with the api you will need to acquire a token.
 
-    var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/users/create"
+    var _url = "http://api.ballot-buddy.com/users/create"
     params = { user: { first: "John", last: "Test", email: "test@test.com", state: "wa" } };
     $.post( _url, params)
     .done(function( data ) {
@@ -31,14 +33,14 @@ To interact with the api you will need to acquire a token.
 
 To get the current list of questions.
 
-    _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/questions";
+    _url = "http://api.ballot-buddy.com/questions";
     $.get(_url, function(questions){ console.log(questions);});
 
 ### Submitting Answer
 
 Submit answers with the users token, question_id, and answer
 
-    var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/answer"
+    var _url = "http://api.ballot-buddy.com/answer"
     params = { question_id: 3, answer: 'yes', };
 
     $.ajax({
@@ -52,7 +54,7 @@ Submit answers with the users token, question_id, and answer
 
 ### Retrieving candidates 
 
-    var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/candidates"
+    var _url = "http://api.ballot-buddy.com/candidates"
 
     $.ajax({
     url: _url+"/candidates",

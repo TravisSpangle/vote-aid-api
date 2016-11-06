@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'candidates', to: 'candidates#index'
+
   post 'answer', to: 'answers#create'
 
   get 'questions', to: 'questions#index'

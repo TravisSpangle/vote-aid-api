@@ -34,6 +34,34 @@ To get the current list of questions.
     _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/questions";
     $.get(_url, function(questions){ console.log(questions);});
 
+### Submitting Answer
+
+Submit answers with the users token, question_id, and answer
+
+    var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/answer"
+    params = { question_id: 3, answer: 'yes', };
+
+    $.ajax({
+      url: _url,
+      type: 'POST',
+      data: params,
+      headers: {"Auth-Token": _token }
+      }).done(function(done) { 
+        console.log(done);
+    });
+
+### Retrieving candidates 
+
+    var _url = "http://ec2-35-162-149-150.us-west-2.compute.amazonaws.com/candidates"
+
+    $.ajax({
+      url: _url,
+      type: 'GET',
+      headers: {"Auth-Token": _token }
+      }).done(function(done) { 
+        console.log(done);
+    });
+
 # TODO:
 
 * System dependencies

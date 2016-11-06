@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'answers/create'
+
   get 'questions', to: 'questions#index'
 
   post 'users/create'

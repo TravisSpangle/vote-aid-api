@@ -1,10 +1,14 @@
 # Vote Aid API
 
-This project is being developed during the smart city kirkland hackathon.
+This project is being developed during the [Kirkland Smart City Startup Weekend](http://kirklandstartup.org/).
+
+* Iconic Mobile App: [cdahlo](https://github.com/cdahlo)
+* Machine Learning Training Data: [mmlopes](https://github.com/mmlopes)
+* API Design & Development: [TravisSpangle](https://github.com/TravisSpangle)
 
 ## Interacting with the API
 
-When teseting keep in mind that some browsers will not allow any cross domain requests to happen. This was tested in FireFox.
+When teseting keep in mind that some browsers will not allow any cross domain requests to happen. This was tested in FireFox 48.0.1.
 
 ### Confirming a Connection
 
@@ -65,18 +69,10 @@ Submit answers with the users token, question_id, and answer
       console.log('error');
     });
 
-# TODO:
+## Mobile Development
 
-* System dependencies
+ballotBuddy is developed in [iconic](http://ionic.io/).
 
-* Configuration
+## Machine Learning
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+[GraphLab](https://turi.com/) is used to develop an algorithm. 
